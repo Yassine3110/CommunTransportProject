@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjetModelStoreContainer" CdmEntityContainer="ApplicationDbContext">
+    <EntitySetMapping Name="Abonnement">
+      <EntityTypeMapping TypeName="ProjetModel.Abonnement">
+        <MappingFragment StoreEntitySet="Abonnement">
+          <ScalarProperty Name="AutoImage" ColumnName="AutoImage" />
+          <ScalarProperty Name="IDAbonnement" ColumnName="IDAbonnement" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="HeureDep" ColumnName="HeureDep" />
+          <ScalarProperty Name="HeureDarr" ColumnName="HeureDarr" />
+          <ScalarProperty Name="IDVilleDep" ColumnName="IDVilleDep" />
+          <ScalarProperty Name="IDVilleDarr" ColumnName="IDVilleDarr" />
+          <ScalarProperty Name="NbrVoulu" ColumnName="NbrVoulu" />
+          <ScalarProperty Name="nbrAtteint" ColumnName="nbrAtteint" />
+          <ScalarProperty Name="Climatisation" ColumnName="Climatisation" />
+          <ScalarProperty Name="IDAutocar" ColumnName="IDAutocar" />
+          <ScalarProperty Name="IDSociete" ColumnName="IDSociete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autocar">
+      <EntityTypeMapping TypeName="ProjetModel.Autocar">
+        <MappingFragment StoreEntitySet="Autocar">
+          <ScalarProperty Name="IDAutocar" ColumnName="IDAutocar" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="ProjetModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Demande">
+      <EntityTypeMapping TypeName="ProjetModel.Demande">
+        <MappingFragment StoreEntitySet="Demande">
+          <ScalarProperty Name="IDDemande" ColumnName="IDDemande" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="HeureDep" ColumnName="HeureDep" />
+          <ScalarProperty Name="HeureDarr" ColumnName="HeureDarr" />
+          <ScalarProperty Name="IDVilleDep" ColumnName="IDVilleDep" />
+          <ScalarProperty Name="IDVilleDarr" ColumnName="IDVilleDarr" />
+          <ScalarProperty Name="IDSociete" ColumnName="IDSociete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Societe">
+      <EntityTypeMapping TypeName="ProjetModel.Societe">
+        <MappingFragment StoreEntitySet="Societe">
+          <ScalarProperty Name="IDSociete" ColumnName="IDSociete" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ville">
+      <EntityTypeMapping TypeName="ProjetModel.Ville">
+        <MappingFragment StoreEntitySet="Ville">
+          <ScalarProperty Name="IDVille" ColumnName="IDVille" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AbonnementClient" TypeName="ProjetModel.AbonnementClient" StoreEntitySet="AbonnementClient">
+      <EndProperty Name="Abonnement">
+        <ScalarProperty Name="IDAbonnement" ColumnName="IDAbonnement" />
+      </EndProperty>
+      <EndProperty Name="Client">
+        <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DemandeClient" TypeName="ProjetModel.DemandeClient" StoreEntitySet="DemandeClient">
+      <EndProperty Name="Client">
+        <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+      </EndProperty>
+      <EndProperty Name="Demande">
+        <ScalarProperty Name="IDDemande" ColumnName="IDDemande" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
